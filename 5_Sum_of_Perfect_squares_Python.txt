@@ -1,0 +1,17 @@
+import math
+def isPerfectSquare(number):
+    if(math.sqrt(number) == math.floor(math.sqrt(number))):
+        return number
+    else:
+        return 0
+
+n = int(input())
+sum = 0
+a = []
+for i in range(0,n):
+    temp = int(input())
+    a.append(temp)
+
+for i in range(0,n):
+    sum = sum + isPerfectSquare(a[i])
+print(sum)

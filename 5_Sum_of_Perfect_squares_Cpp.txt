@@ -1,0 +1,36 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+int isPerfectSquare(int number)
+{
+    int iV;
+    double fV;
+
+    fV = sqrt((double)number);
+    iV = fV;
+
+    if(iV ==fV)
+        return number;
+    else
+        return 0;
+}
+
+int main()
+{
+    int n;
+    cin >> n;
+    int a[n];
+    int i;
+    for(i = 0; i < n; i++)
+    {
+        cin >> a[i];
+    }
+    int sum = 0;
+    for(i = 0; i < n; i++)
+    {
+        sum = sum + isPerfectSquare(a[i]);
+    }
+    cout << sum;
+    return 0;
+}
