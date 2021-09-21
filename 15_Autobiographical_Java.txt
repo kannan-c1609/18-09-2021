@@ -1,0 +1,33 @@
+
+import java.util.*;
+class Main
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        char[] ch = s.toCharArray();
+        int len = s.length();
+        int valueCount[] = new int[10];
+        int freq[] = new int[10];
+        int count = 0;
+        for(int i = 0; i < len; i++)
+            valueCount[ch[i]-'0']++;
+        for(int i=0;i<10;i++)
+		if(valueCount[i]>0)
+			count++;
+    	for(int i=0;i < len;i++)
+	    	valueCount[i]=valueCount[i]-(ch[i]-'0');
+	    for(int i=0;i<10;i++)
+	    {
+		    if(valueCount[i]!=0)
+			{
+			    System.out.print("0");
+			    return;
+			}
+	    }
+	    System.out.print(count);
+            
+        
+    }
+}
