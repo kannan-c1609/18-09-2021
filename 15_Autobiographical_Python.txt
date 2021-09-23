@@ -1,0 +1,35 @@
+"""
+Autobiographical Number
+Problem Statement :
+An Autobiographical Number is a number N such that the first digit of N represents the count of how many zeroes are there in N, the second digit represents the count of how many ones are there in N and so on.
+You are given a function, defFindAutoCount(n):
+The function accepts string “n” which is a number and checks whether the number is an autobiographical number or not. If it is, an integer is returned, i.e. the count of distinct numbers in ‘n’. If not, it returns 0.
+Assumption:
+•	The input string will not be longer than 10 characters.
+•	Input string will consist of numeric characters.
+Note:
+If string is None return 0.
+Example:
+Input:
+n: “1210”
+Output:
+3
+
+"""
+from collections import Counter
+def is_auto(x):
+    if len(x) > 10:
+           return False
+    c = Counter(x)
+    for i, v in enumerate(x):
+            if int(v) != c.get(str(i), 0):
+                    return False
+    return True
+
+ 
+
+a = input()
+if is_auto(a):
+    print('Yes')
+else:
+    print('No')
